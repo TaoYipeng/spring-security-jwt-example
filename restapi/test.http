@@ -1,0 +1,12 @@
+### /authenticate 认证接口
+POST http://localhost:9192/authenticate
+Content-Type: application/json
+
+{
+  "userName": "user1",
+  "password": "pwd12"
+}
+
+### /aaa 测试GET接口
+GET http://localhost:9192/aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2MzQ3NDE2NSwiaWF0IjoxNjYzNDM4MTY1fQ.Ex02rIM5d6hFFs-z3Ns7dOh_KM6IZerVThe1EqOeJWU
