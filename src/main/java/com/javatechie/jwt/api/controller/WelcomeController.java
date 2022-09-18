@@ -18,10 +18,6 @@ public class WelcomeController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping("/aaa")
-    public String welcome() {
-        return "Welcome to javatechie !!";
-    }
 
     @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
@@ -32,6 +28,14 @@ public class WelcomeController {
         } catch (Exception ex) {
             throw new Exception("inavalid username/password");
         }
-        return jwtUtil.generateToken(authRequest.getUserName());
+        String token = jwtUtil.generateToken(authRequest.getUserName());
+        return token;
     }
+
+
+    @GetMapping("/aaa")
+    public String welcome() {
+        return "Welcome to javatechie !!";
+    }
+
 }
