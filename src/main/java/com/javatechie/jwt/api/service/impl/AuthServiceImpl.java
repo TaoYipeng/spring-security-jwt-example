@@ -39,8 +39,8 @@ public class AuthServiceImpl implements IAuthService {
     }
 
     @Override
-    public String refreshToken(String token) {
-        String accessToken = jwtUtil.refreshToken(token);
-        return "refresh successifully";
+    public String refreshToken(String oldToken) {
+        String newToken = jwtUtil.refreshHeadToken(oldToken);
+        return newToken;
     }
 }

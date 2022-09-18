@@ -5,6 +5,7 @@ import com.javatechie.jwt.api.entity.AuthRequest;
 import com.javatechie.jwt.api.service.IAuthService;
 import com.javatechie.jwt.api.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,9 @@ public class AuthController implements IAuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Value("${jwt.tokenHeader}")
+    private String tokenHeader;
+
     public String login(AuthRequest authRequest) throws Exception {
         return authService.login(authRequest.getUserName(), authRequest.getPassword());
     }
@@ -30,6 +34,6 @@ public class AuthController implements IAuthController {
     }
 
     public String refreshToken(HttpServletRequest request) {
-        return authService.refreshToken(jwtUtil.getToken(request));
+        return authService.refreshToken(request.getHeader(tokenHeader));
     }
 }
