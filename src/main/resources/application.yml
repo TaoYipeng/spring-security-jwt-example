@@ -23,5 +23,5 @@ secure:
       - /webjars/springfox-swagger-ui/**
       - /actuator/**
       - /druid/**
-      - /auth/login
+      - /api/auth/**
 

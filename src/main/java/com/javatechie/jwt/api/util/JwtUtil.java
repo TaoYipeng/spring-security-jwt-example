@@ -6,6 +6,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,6 +52,34 @@ public class JwtUtil {
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+
+    /**
+     * 从请求中拿到token
+     */
+    public String getToken(HttpServletRequest request) {
+        return request.getHeader("Authorization");
+    }
+
+    /**
+     * 刷新token
+     * 过滤器会对请求进行验证，所以这里可以不必验证
+     *
+     * @param oldToken 带tokenHead的token
+     */
+    public String refreshToken(String oldToken) {
+        String token = oldToken.substring("Bearer ".length());
+
+//        // token反解析
+//        Claims claims = getClaimsFromToken(token);
+//
+//        //如果token在30分钟之内刚刷新过，返回原token
+//        if (tokenRefreshJustBefore(claims)) {
+//            return AccessToken.builder().loginAccount(claims.getSubject()).token(oldToken).expirationTime(claims.getExpiration()).build();
+//        } else {
+//            return createToken(claims.getSubject());
+//        }
+        return token;
     }
 }
 

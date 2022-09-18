@@ -1,5 +1,5 @@
-### /auth/login 认证接口
-POST http://localhost:9193/auth/login
+### /api/auth/login 认证接口
+POST http://localhost:9193/api/auth/login
 Content-Type: application/json
 
 {
@@ -7,7 +7,13 @@ Content-Type: application/json
   "password": "pwd1"
 }
 
+### /api/auth/logout 退出登录接口
+POST http://localhost:9193/api/auth/logout
 
-### /auth/aaa 测试GET接口
-GET http://localhost:9193/auth/aaa
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2MzUyOTM5OCwiaWF0IjoxNjYzNDkzMzk4fQ.9XyHOBmLJJsJsNhpxI_fCVJt6iKqTcILtsp57CPueXQ
+
+
+
+
+### /test/aaa 测试GET接口
+GET http://localhost:9193/test/aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2MzUzMjE0MCwiaWF0IjoxNjYzNDk2MTQwfQ.BAXjrMqVJ9Y6nR8_ejO8uI9xE-8KSPaE7C6oKgQaFIU
