@@ -1,5 +1,5 @@
-### /authenticate 认证接口
-POST http://localhost:9193/authenticate
+### /auth/login 认证接口
+POST http://localhost:9193/auth/login
 Content-Type: application/json
 
 {
@@ -8,6 +8,6 @@ Content-Type: application/json
 }
 
 
-### /aaa 测试GET接口
-GET http://localhost:9193/aaa
-Authorization: Bearer 11eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2MzUyNjQ2MywiaWF0IjoxNjYzNDkwNDYzfQ.PHqTKHjI4S44DzERZRrphUr_uwiHivhPml9LjnW_Sqg
+### /auth/aaa 测试GET接口
+GET http://localhost:9193/auth/aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2MzUyOTM5OCwiaWF0IjoxNjYzNDkzMzk4fQ.9XyHOBmLJJsJsNhpxI_fCVJt6iKqTcILtsp57CPueXQ
