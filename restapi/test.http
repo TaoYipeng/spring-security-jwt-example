@@ -16,4 +16,4 @@ POST http://localhost:9193/api/auth/logout
 
 ### /test/aaa 测试GET接口
 GET http://localhost:9193/test/aaa
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImNyZWF0ZWQiOjE2NjM0OTg4MDgyMDUsImV4cCI6MTY2NDEwMzYwOH0.GKSx3bF-71q9mAKsfJl69A_Kt_g8dLFJ3cjqWhySVDuVNcLJwp4TKnlK6t29_3-f9t2sho6Y9TBL68y2wmXrVw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImNyZWF0ZWQiOjE2NjM1MDUzNzI4MDIsImV4cCI6MTY2NDExMDE3Mn0.Rwk4t11JcRsKiTNsUoLZsb6NPh3TtYLeGECcUA_9wgl-s9JHVs2X3VJM9JhbW6t0C5YhShGNtft6M6HooQ5OHw

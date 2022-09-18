@@ -1,0 +1,34 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+server:
+    port: 9193
+
+
+# 自定义类 ignoreConfig，URL 的白名单
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /doc.html
+      - /swagger-ui/**
+      - /swagger/**
+      - /swagger-resources/**
+      - /**/v3/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /webjars/springfox-swagger-ui/**
+      - /actuator/**
+      - /druid/**
+      - /api/auth/**
+
+
+# 登录认证 token filter
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: jwt-admin-secret   #JWT加解密使用的密钥
+  expiration: 604800         #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer '       #JWT负载中拿到开头
